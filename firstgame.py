@@ -9,6 +9,7 @@ y1 = 0
 x2 = 1080
 y2 = 0
 velocity = 10
+block = pygame.Rect(500,500,100,100)
 image  = pygame.image.load('johnwick.jpg')
 while True: # main game loop
     for event in pygame.event.get():
@@ -17,9 +18,9 @@ while True: # main game loop
             sys.exit()
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_w] and y1 > 0:
+    if keys[pygame.K_w] or keys[pygame.K_UP] and y1 > 0:
         y1 -= velocity
-    if keys[pygame.K_s] and y1 < 620: 
+    if keys[pygame.K_s] or keys[pygame.K_DOWN]and y1 < 620: 
         y1 += velocity
     if keys[pygame.K_a] and x1 > 0:
         x1 -= velocity
